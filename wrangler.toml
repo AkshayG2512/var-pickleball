@@ -1,0 +1,12 @@
+name = "var-pickleball-worker"
+main = "src/worker/index.js"
+compatibility_date = "2025-11-18"
+account_id = "4ea151c89f8be57aeac23ea074c889d4"
+
+[[d1_databases]]
+binding = "D1_VAR"
+database_name = "var_pickledb_beta"
+
+[[r2_buckets]]
+binding = "R2_MATCHES"
+bucket_name = "var-pickleball-uploads"
