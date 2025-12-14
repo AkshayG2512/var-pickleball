@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createMatch, getMatch, addEvent, uploadSnapshot } from "../lib/api";
+import { createMatch, getMatch, postEvent, uploadSnapshot } from '../lib/api';
 
 export default function Match() {
   const [matchId, setMatchId] = useState("");
@@ -39,7 +39,7 @@ export default function Match() {
     if (!matchId) return alert("Create a match first");
     setLoading(true);
     try {
-      await addEvent(matchId, "point", { player });
+      await postEvent(matchId, "point", { player });
       await refresh();
     } catch (e) {
       alert(String(e));
@@ -52,7 +52,7 @@ export default function Match() {
     if (!matchId) return;
     setLoading(true);
     try {
-      await addEvent(matchId, "undo");
+      await postEvent(matchId, "undo");
       await refresh();
     } catch (e) {
       alert(String(e));
